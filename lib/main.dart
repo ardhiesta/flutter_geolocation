@@ -50,7 +50,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  Position _posit = Position(
+  Position _myPosition = Position(
       longitude: 0,
       latitude: 0,
       timestamp: DateTime.now(),
@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //   'You have pushed the button this many times:',
             // ),
             Text(
-              '$_posit',
+              '$_myPosition',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
@@ -162,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
     // return await Geolocator.getCurrentPosition();
-    Position posit = await Geolocator.getCurrentPosition();
-    setState(() => _posit = posit);
+    Position myPosition = await Geolocator.getCurrentPosition();
+    setState(() => _myPosition = myPosition);
   }
 }
